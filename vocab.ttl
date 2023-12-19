@@ -1,54 +1,56 @@
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
-@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
-@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
-@prefix vocab: <http://example.com/olympics/og#>.
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix vs: <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
+@prefix o: <http://omeka.org/s/vocabs/o#> .
 
-vocab:OlympicsVocabulary rdf:type owl:Ontology;
-    rdfs:label "Olympic games" .
+<http://example.com/olympics/og#> a owl:Ontology ;
+    dcterms:title "Olympic games" .
 
 # Classes
-vocab:Athlete rdf:type rdfs:Class.
-vocab:Sport rdf:type rdfs:Class.
-vocab:OlympicEvent rdf:type rdfs:Class.
+OG:Athlete rdf:type rdfs:Class.
+OG:Sport rdf:type rdfs:Class.
+OG:OlympicEvent rdf:type rdfs:Class.
 
 # Properties
-vocab:hasName rdf:type rdf:Property, owl:DatatypeProperty;
-    rdfs:domain vocab:Athlete;
+OG:hasName rdf:type rdf:Property, owl:DatatypeProperty;
+    rdfs:domain OG:Athlete;
     rdfs:range xsd:string.
 
-vocab:hasBirthDate rdf:type rdf:Property, owl:DatatypeProperty;
-    rdfs:domain vocab:Athlete;
+OG:hasBirthDate rdf:type rdf:Property, owl:DatatypeProperty;
+    rdfs:domain OG:Athlete;
     rdfs:range xsd:date.
 
-vocab:hasGender rdf:type rdf:Property, owl:DatatypeProperty;
-    rdfs:domain vocab:Athlete;
+OG:hasGender rdf:type rdf:Property, owl:DatatypeProperty;
+    rdfs:domain OG:Athlete;
     rdfs:range xsd:string.
 
-vocab:participatesIn rdf:type rdf:Property, owl:ObjectProperty;
-    rdfs:domain vocab:Athlete;
-    rdfs:range vocab:OlympicEvent.
+OG:participatesIn rdf:type rdf:Property, owl:ObjectProperty;
+    rdfs:domain OG:Athlete;
+    rdfs:range OG:OlympicEvent.
 
-vocab:hasResult rdf:type rdf:Property, owl:ObjectProperty;
-    rdfs:domain vocab:Athlete;
+OG:hasResult rdf:type rdf:Property, owl:ObjectProperty;
+    rdfs:domain OG:Athlete;
     rdfs:range xsd:string.
 
-vocab:isDisciplineOf rdf:type rdf:Property, owl:ObjectProperty;
-    rdfs:domain vocab:Sport;
-    rdfs:range vocab:OlympicEvent.
+OG:isDisciplineOf rdf:type rdf:Property, owl:ObjectProperty;
+    rdfs:domain OG:Sport;
+    rdfs:range OG:OlympicEvent.
 
 # Instances
-vocab:JohnDoe rdf:type vocab:Athlete;
-    vocab:hasName "John Doe";
-    vocab:hasBirthDate "1990-05-15"^^xsd:date;
-    vocab:hasGender "Male".
+OG:JohnDoe rdf:type OG:Athlete;
+    OG:hasName "John Doe";
+    OG:hasBirthDate "1990-05-15"^^xsd:date;
+    OG:hasGender "Male".
 
-vocab:Swimming rdf:type vocab:Sport.
+OG:Swimming rdf:type OG:Sport.
 
 # Olympic Event and Results
-vocab:RunningEvent rdf:type vocab:OlympicEvent;
-    vocab:isDisciplineOf vocab:Running.
+OG:RunningEvent rdf:type OG:OlympicEvent;
+    OG:isDisciplineOf OG:Running.
 
-vocab:AminSalmi vocab:participatesIn vocab:RunningEvent;
-    vocab:hasResult "Gold Medal".
+OG:AminSalmi OG:participatesIn OG:RunningEvent;
+    OG:hasResult "Gold Medal".
 
-vocab:RunningEvent vocab:hasResult "World Record".
+OG:RunningEvent OG:hasResult "World Record".
