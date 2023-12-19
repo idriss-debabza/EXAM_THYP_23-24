@@ -1,0 +1,54 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix vocab: <http://example.com/olympics/og#>.
+
+vocab:OlympicsVocabulary rdf:type owl:Ontology;
+    rdfs:label "Olympic games" .
+
+# Classes
+vocab:Athlete rdf:type rdfs:Class.
+vocab:Sport rdf:type rdfs:Class.
+vocab:OlympicEvent rdf:type rdfs:Class.
+
+# Properties
+vocab:hasName rdf:type rdf:Property, owl:DatatypeProperty;
+    rdfs:domain vocab:Athlete;
+    rdfs:range xsd:string.
+
+vocab:hasBirthDate rdf:type rdf:Property, owl:DatatypeProperty;
+    rdfs:domain vocab:Athlete;
+    rdfs:range xsd:date.
+
+vocab:hasGender rdf:type rdf:Property, owl:DatatypeProperty;
+    rdfs:domain vocab:Athlete;
+    rdfs:range xsd:string.
+
+vocab:participatesIn rdf:type rdf:Property, owl:ObjectProperty;
+    rdfs:domain vocab:Athlete;
+    rdfs:range vocab:OlympicEvent.
+
+vocab:hasResult rdf:type rdf:Property, owl:ObjectProperty;
+    rdfs:domain vocab:Athlete;
+    rdfs:range xsd:string.
+
+vocab:isDisciplineOf rdf:type rdf:Property, owl:ObjectProperty;
+    rdfs:domain vocab:Sport;
+    rdfs:range vocab:OlympicEvent.
+
+# Instances
+vocab:JohnDoe rdf:type vocab:Athlete;
+    vocab:hasName "John Doe";
+    vocab:hasBirthDate "1990-05-15"^^xsd:date;
+    vocab:hasGender "Male".
+
+vocab:Swimming rdf:type vocab:Sport.
+
+# Olympic Event and Results
+vocab:RunningEvent rdf:type vocab:OlympicEvent;
+    vocab:isDisciplineOf vocab:Running.
+
+vocab:AminSalmi vocab:participatesIn vocab:RunningEvent;
+    vocab:hasResult "Gold Medal".
+
+vocab:RunningEvent vocab:hasResult "World Record".
