@@ -9,19 +9,16 @@
 
     <h1>Liste des Items</h1>
 
-    <!-- Container pour afficher la liste des items -->
     <div id="itemsContainer"></div>
 
-    <!-- Zone pour filtrer la liste des items par titre -->
     <label for="filterTitle">Filtrer par titre:</label>
     <input type="text" id="filterTitle" oninput="filterItems()">
 
-    <!-- Script pour récupérer et afficher les items -->
     <script>
         // Fonction pour récupérer les données de l'API
         function getData(callback) {
             // Remplacez l'URL de l'API par votre propre URL
-            fetch('https://votre-api.com/items')
+            fetch('localhost/projet/omeka-s/api/items?pretty_print=1')
                 .then(response => response.json())
                 .then(data => callback(data))
                 .catch(error => console.error('Erreur lors de la récupération des données:', error));
