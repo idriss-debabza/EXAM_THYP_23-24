@@ -1,70 +1,68 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Liste des Items</title>
+    <title>Items List</title>
 </head>
 <body>
 
-    <h1>Liste des Items</h1>
+<h1>Athletes List</h1>
 
-    <div id="itemsContainer"></div>
+<input type="text" id="filterInput" placeholder="Filter by athlete name" oninput="filterItems()">
 
-    <label for="filterTitle">Filtrer par titre:</label>
-    <input type="text" id="filterTitle" oninput="filterItems()">
+<ul id="athleteList"></ul>
 
-    <script>
-        // Fonction pour récupérer les données de l'API
-        function getData(callback) {
-            // Remplacez l'URL de l'API par votre propre URL
-            fetch('localhost/projet/omeka-s/api/items?pretty_print=1')
-                .then(response => response.json())
-                .then(data => callback(data))
-                .catch(error => console.error('Erreur lors de la récupération des données:', error));
-        }
+<script>
+    function getData() {
+        fetch('http://localhost/projet/omeka-s/api/items')
+            .then(response => response.json())
+            .then(data => showAthletes(data))
+            .catch(error => console.error('Error fetching data:', error));
+    }
 
-        // Fonction pour afficher la liste des items
-        function showItems(items) {
-            const itemsContainer = document.getElementById('itemsContainer');
-            itemsContainer.innerHTML = ''; // Effacer le contenu actuel
+    function showAthletes(items) {
+        const athleteList = document.getElementById('athleteList');
+        athleteList.innerHTML = '';
 
-            items.forEach(item => {
-                // Créer un élément div pour chaque item
-                const itemDiv = document.createElement('div');
+        items.forEach(item => {
+            if (item['@type'].includes('OG:Athlete')) {
+                const birthDate = item['OG:hasBirthDate'] ? item['OG:hasBirthDate'][0]['@value'] : 'N/A';
+                const sport = item['OG:isDisciplineOf'] ? item['OG:isDisciplineOf'][0]['display_title'] : 'N/A';
+                const result = item['OG:hasResult'] ? item['OG:hasResult'][0]['@value'] : 'N/A';
 
-                // Ajouter l'identifiant de l'item
-                const itemId = document.createElement('p');
-                itemId.textContent = `Identifiant: ${item.id}`;
-                itemDiv.appendChild(itemId);
+                const listItem = document.createElement('li');
+                listItem.innerHTML = `
+                    <strong>Name:</strong> ${item['OG:hasName'][0]['@value']} <br>
+                    <strong>Birthdate:</strong> ${birthDate} <br>
+                    <strong>Sport:</strong> ${sport} <br>
+                    <strong>Result:</strong> ${result} <br>
+                    <hr>
+                `;
+                athleteList.appendChild(listItem);
+            }
+        });
+    }
 
-                // Ajouter le titre de l'item
-                const itemTitle = document.createElement('p');
-                itemTitle.textContent = `Titre: ${item.title}`;
-                itemDiv.appendChild(itemTitle);
+    function filterItems() {
+        const filterInput = document.getElementById('filterInput');
+        const filterValue = filterInput.value.toLowerCase();
 
-                // Ajouter le média de l'item (assumons que le média est une URL)
-                const itemMedia = document.createElement('p');
-                itemMedia.textContent = `Media: ${item.media}`;
-                itemDiv.appendChild(itemMedia);
-
-                // Ajouter l'élément div à la liste des items
-                itemsContainer.appendChild(itemDiv);
-            });
-        }
-
-        // Fonction pour filtrer la liste des items par titre
-        function filterItems() {
-            const filterTitle = document.getElementById('filterTitle').value;
-            getData(data => {
-                const filteredItems = data.filter(item => item.title.toLowerCase().includes(filterTitle.toLowerCase()));
-                showItems(filteredItems);
-            });
-        }
-
-        // Appeler la fonction getData pour récupérer les données et afficher les items
-        getData(showItems);
-    </script>
+        fetch('http://localhost/projet/omeka-s/api/items')
+            .then(response => response.json())
+            .then(data => {
+                const filteredAthletes = data.filter(item => {
+                    if (item['@type'].includes('OG:Athlete')) {
+                        return item['OG:hasName'][0]['@value'].toLowerCase().includes(filterValue);
+                    }
+                    return false;
+                });
+                showAthletes(filteredAthletes);
+            })
+            .catch(error => console.error('Error fetching data:', error));
+    }
+    getData();
+</script>
 
 </body>
 </html>
