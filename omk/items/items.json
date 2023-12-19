@@ -1,0 +1,394 @@
+	
+0	
+@context	"http://localhost/projet/omeka-s/api-context"
+@id	"http://localhost/projet/omeka-s/api/items/4"
+@type	
+0	"o:Item"
+1	"OG:Athlete"
+o:id	4
+o:is_public	true
+o:owner	
+@id	"http://localhost/projet/omeka-s/api/users/1"
+o:id	1
+o:resource_class	
+@id	"http://localhost/projet/omeka-s/api/resource_classes/110"
+o:id	110
+o:resource_template	
+@id	"http://localhost/projet/omeka-s/api/resource_templates/2"
+o:id	2
+o:thumbnail	null
+o:title	"Taoufik Makhloufi"
+thumbnail_display_urls	
+large	null
+medium	null
+square	null
+o:created	
+@value	"2023-12-19T10:30:27+00:00"
+@type	"http://www.w3.org/2001/XMLSchema#dateTime"
+o:modified	
+@value	"2023-12-19T10:46:02+00:00"
+@type	"http://www.w3.org/2001/XMLSchema#dateTime"
+o:primary_media	null
+o:media	[]
+o:item_set	[]
+o:site	[]
+dcterms:title	
+0	
+type	"literal"
+property_id	1
+property_label	"Title"
+is_public	true
+@value	"Taoufik Makhloufi"
+OG:hasBirthDate	
+0	
+type	"literal"
+property_id	191
+property_label	"hasBirthDate"
+is_public	true
+@value	"29/04/1988"
+OG:hasGender	
+0	
+type	"literal"
+property_id	192
+property_label	"hasGender"
+is_public	true
+@value	"Male"
+OG:hasName	
+0	
+type	"literal"
+property_id	190
+property_label	"hasName"
+is_public	true
+@value	"Taoufik Makhloufi"
+OG:hasResult	
+0	
+type	"literal"
+property_id	194
+property_label	"hasResult"
+is_public	true
+@value	"Gold Medal"
+OG:isDisciplineOf	
+0	
+type	"resource"
+property_id	195
+property_label	"isDisciplineOf"
+is_public	true
+@id	"http://localhost/projet/omeka-s/api/items/5"
+value_resource_id	5
+value_resource_name	"items"
+url	null
+display_title	"Running"
+OG:participatesIn	
+0	
+type	"resource"
+property_id	193
+property_label	"participatesIn"
+is_public	true
+@id	"http://localhost/projet/omeka-s/api/items/6"
+value_resource_id	6
+value_resource_name	"items"
+url	null
+display_title	"Running 2024"
+1	
+@context	"http://localhost/projet/omeka-s/api-context"
+@id	"http://localhost/projet/omeka-s/api/items/5"
+@type	
+0	"o:Item"
+1	"OG:Sport"
+o:id	5
+o:is_public	true
+o:owner	
+@id	"http://localhost/projet/omeka-s/api/users/1"
+o:id	1
+o:resource_class	
+@id	"http://localhost/projet/omeka-s/api/resource_classes/111"
+o:id	111
+o:resource_template	
+@id	"http://localhost/projet/omeka-s/api/resource_templates/3"
+o:id	3
+o:thumbnail	null
+o:title	"Running"
+thumbnail_display_urls	
+large	null
+medium	null
+square	null
+o:created	
+@value	"2023-12-19T10:31:15+00:00"
+@type	"http://www.w3.org/2001/XMLSchema#dateTime"
+o:modified	
+@value	"2023-12-19T10:31:15+00:00"
+@type	"http://www.w3.org/2001/XMLSchema#dateTime"
+o:primary_media	null
+o:media	[]
+o:item_set	[]
+o:site	[]
+dcterms:title	
+0	
+type	"literal"
+property_id	1
+property_label	"Title"
+is_public	true
+@value	"Running"
+@reverse	
+OG:isDisciplineOf	
+0	
+@id	"http://localhost/projet/omeka-s/api/resources/4"
+o:title	"Taoufik Makhloufi"
+1	
+@id	"http://localhost/projet/omeka-s/api/resources/6"
+o:title	"Running 2024"
+2	
+@id	"http://localhost/projet/omeka-s/api/resources/7"
+o:title	"JohnDoe"
+3	
+@id	"http://localhost/projet/omeka-s/api/resources/8"
+o:title	"amin salmi"
+2	
+@context	"http://localhost/projet/omeka-s/api-context"
+@id	"http://localhost/projet/omeka-s/api/items/6"
+@type	
+0	"o:Item"
+1	"dctype:Event"
+o:id	6
+o:is_public	true
+o:owner	
+@id	"http://localhost/projet/omeka-s/api/users/1"
+o:id	1
+o:resource_class	
+@id	"http://localhost/projet/omeka-s/api/resource_classes/25"
+o:id	25
+o:resource_template	
+@id	"http://localhost/projet/omeka-s/api/resource_templates/4"
+o:id	4
+o:thumbnail	null
+o:title	"Running 2024"
+thumbnail_display_urls	
+large	null
+medium	null
+square	null
+o:created	
+@value	"2023-12-19T10:31:46+00:00"
+@type	"http://www.w3.org/2001/XMLSchema#dateTime"
+o:modified	
+@value	"2023-12-19T10:47:55+00:00"
+@type	"http://www.w3.org/2001/XMLSchema#dateTime"
+o:primary_media	null
+o:media	[]
+o:item_set	[]
+o:site	[]
+dcterms:title	
+0	
+type	"literal"
+property_id	1
+property_label	"Title"
+is_public	true
+@value	"Running 2024"
+OG:isDisciplineOf	
+0	
+type	"resource"
+property_id	195
+property_label	"isDisciplineOf"
+is_public	true
+@id	"http://localhost/projet/omeka-s/api/items/5"
+value_resource_id	5
+value_resource_name	"items"
+url	null
+display_title	"Running"
+OG:hasResult	
+0	
+type	"literal"
+property_id	194
+property_label	"hasResult"
+is_public	true
+@value	"World record"
+@reverse	
+OG:participatesIn	
+0	
+@id	"http://localhost/projet/omeka-s/api/resources/4"
+o:title	"Taoufik Makhloufi"
+1	
+@id	"http://localhost/projet/omeka-s/api/resources/8"
+o:title	"amin salmi"
+2	
+@id	"http://localhost/projet/omeka-s/api/resources/7"
+o:title	"JohnDoe"
+3	
+@context	"http://localhost/projet/omeka-s/api-context"
+@id	"http://localhost/projet/omeka-s/api/items/7"
+@type	
+0	"o:Item"
+1	"OG:Athlete"
+o:id	7
+o:is_public	true
+o:owner	
+@id	"http://localhost/projet/omeka-s/api/users/1"
+o:id	1
+o:resource_class	
+@id	"http://localhost/projet/omeka-s/api/resource_classes/110"
+o:id	110
+o:resource_template	
+@id	"http://localhost/projet/omeka-s/api/resource_templates/2"
+o:id	2
+o:thumbnail	null
+o:title	"JohnDoe"
+thumbnail_display_urls	
+large	null
+medium	null
+square	null
+o:created	
+@value	"2023-12-19T10:38:56+00:00"
+@type	"http://www.w3.org/2001/XMLSchema#dateTime"
+o:modified	
+@value	"2023-12-19T10:47:19+00:00"
+@type	"http://www.w3.org/2001/XMLSchema#dateTime"
+o:primary_media	null
+o:media	[]
+o:item_set	[]
+o:site	[]
+dcterms:title	
+0	
+type	"literal"
+property_id	1
+property_label	"Title"
+is_public	true
+@value	"JohnDoe"
+OG:hasBirthDate	
+0	
+type	"literal"
+property_id	191
+property_label	"hasBirthDate"
+is_public	true
+@value	"1990-05-15"
+OG:hasGender	
+0	
+type	"literal"
+property_id	192
+property_label	"hasGender"
+is_public	true
+@value	"Male"
+OG:hasName	
+0	
+type	"literal"
+property_id	190
+property_label	"hasName"
+is_public	true
+@value	"John Doe"
+OG:hasResult	
+0	
+type	"literal"
+property_id	194
+property_label	"hasResult"
+is_public	true
+@value	"Bronze Medal"
+OG:isDisciplineOf	
+0	
+type	"resource"
+property_id	195
+property_label	"isDisciplineOf"
+is_public	true
+@id	"http://localhost/projet/omeka-s/api/items/5"
+value_resource_id	5
+value_resource_name	"items"
+url	null
+display_title	"Running"
+OG:participatesIn	
+0	
+type	"resource"
+property_id	193
+property_label	"participatesIn"
+is_public	true
+@id	"http://localhost/projet/omeka-s/api/items/6"
+value_resource_id	6
+value_resource_name	"items"
+url	null
+display_title	"Running 2024"
+4	
+@context	"http://localhost/projet/omeka-s/api-context"
+@id	"http://localhost/projet/omeka-s/api/items/8"
+@type	
+0	"o:Item"
+1	"OG:Athlete"
+o:id	8
+o:is_public	true
+o:owner	
+@id	"http://localhost/projet/omeka-s/api/users/1"
+o:id	1
+o:resource_class	
+@id	"http://localhost/projet/omeka-s/api/resource_classes/110"
+o:id	110
+o:resource_template	
+@id	"http://localhost/projet/omeka-s/api/resource_templates/2"
+o:id	2
+o:thumbnail	null
+o:title	"amin salmi"
+thumbnail_display_urls	
+large	null
+medium	null
+square	null
+o:created	
+@value	"2023-12-19T10:44:56+00:00"
+@type	"http://www.w3.org/2001/XMLSchema#dateTime"
+o:modified	
+@value	"2023-12-19T10:44:56+00:00"
+@type	"http://www.w3.org/2001/XMLSchema#dateTime"
+o:primary_media	null
+o:media	[]
+o:item_set	[]
+o:site	[]
+dcterms:title	
+0	
+type	"literal"
+property_id	1
+property_label	"Title"
+is_public	true
+@value	"amin salmi"
+OG:hasBirthDate	
+0	
+type	"literal"
+property_id	191
+property_label	"hasBirthDate"
+is_public	true
+@value	"19/12/1994"
+OG:hasGender	
+0	
+type	"literal"
+property_id	192
+property_label	"hasGender"
+is_public	true
+@value	"male"
+OG:hasName	
+0	
+type	"literal"
+property_id	190
+property_label	"hasName"
+is_public	true
+@value	"amin salmi"
+OG:hasResult	
+0	
+type	"literal"
+property_id	194
+property_label	"hasResult"
+is_public	true
+@value	"Silver medal"
+OG:isDisciplineOf	
+0	
+type	"resource"
+property_id	195
+property_label	"isDisciplineOf"
+is_public	true
+@id	"http://localhost/projet/omeka-s/api/items/5"
+value_resource_id	5
+value_resource_name	"items"
+url	null
+display_title	"Running"
+OG:participatesIn	
+0	
+type	"resource"
+property_id	193
+property_label	"participatesIn"
+is_public	true
+@id	"http://localhost/projet/omeka-s/api/items/6"
+value_resource_id	6
+value_resource_name	"items"
+url	null
+display_title	"Running 2024"
